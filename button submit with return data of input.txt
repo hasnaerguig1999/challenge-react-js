@@ -1,0 +1,45 @@
+
+
+import React, { useState } from "react";
+
+        const Form = () => {
+   const [name, setName] = useState('');
+   const [list, setList] = useState([]);
+
+
+   const handleChange = (event) => {
+        // console.log(event.target.value);
+        setName(event.target.value)
+        
+    } 
+   
+    const readNWrite = () => {
+        // setList([...list,name])
+        list.push(name)
+        console.log(list);
+        setName('')
+
+    } 
+
+  
+
+
+return (
+  
+      <div>
+        <input value={name} type="text" onChange={
+                handleChange
+                } />
+        <button onClick={readNWrite}
+        >Dark mod</button>
+        {
+                list.map((item,index)=>(<p key={index}> {item}</p> ))
+        }
+</div>
+
+);
+        }
+        
+
+export default Form;
+
