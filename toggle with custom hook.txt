@@ -1,0 +1,19 @@
+import React, { useState } from 'react'
+
+export default function Toggle() {
+   const {toggle,istoggle}=useToggle()
+   
+  return (
+    <div>
+        <button onClick={toggle}> {istoggle ? 'TRUE': 'FALSE' }</button>
+       
+
+    </div>
+  )
+}
+function useToggle() {
+
+const[istoggle,setIsToggle]=useState(false)
+   const toggle =()=>setIsToggle(!istoggle)
+   return{ toggle,istoggle};
+}
